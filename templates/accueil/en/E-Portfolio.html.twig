@@ -6,47 +6,42 @@
 <div class="container my-5">
 
     <h1 class="text-center mb-4">My E-Portfolio</h1>
-    <p class="lead text-center mb-5">This is the E-portfolio of CHIBOUB Mohamed in BUT RT 1</p>
+    <p class="lead text-center mb-5">Here is the E-portfolio of CHIBOUB Mohamed in BUT RT 1</p>
 
-    {# ===================== Administrate ===================== #}
+    {# ===================== Administer ===================== #}
     <section class="mb-5 p-3" style="background-color: #d5f5e3; border-radius: 10px;">
-        <h2 class="mb-4">Administrate</h2>
+        <h2 class="mb-4">Administer</h2>
 
         {% set administrer_competences = [
             {
-                'title': 'AC11.02 Understand the architecture and fundamentals of digital systems, the principles of information coding, communications, and the Internet',
-                'analyse_link': 'https://docs.google.com/document/d/1pciDbHnWq_99yRCfy9ZzfJcKJLLqSj3h59XO0Ucr_Bg/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/1jJ-umN70mfhsy18dgszxrlGaCOUC5h8HsbkJ5yBp8FY/edit?usp=sharing',
-                'description': 'In this learning activity, our goal is to understand a digital system.',
-                'ressenti': 'During the activities, I felt generally comfortable and interested, especially during practical phases.'
+                'title': 'Critical Skill: Administer Networks and the Internet',
+                'analyse_link': 'https://docs.google.com/document/d/1K7xRRqMjZPyqPrmULoilApvgpD6SCccR/edit?usp=sharing&ouid=112405732234709398963&rtpof=true&sd=true',
+                'preuve_link': 'https://docs.google.com/document/d/14JY67BZ9ZC_UDkclHhj8uVIEzbEKaC12/edit?usp=sharing&ouid=112405732234709398963&rtpof=true&sd=true',
+                'description': 'The objective of this skill is to administer various devices and networks.',
+                'ressenti': 'During the activities, I generally felt comfortable and interested, especially during the practical phases. I would give myself a 4/5 for this skill.'
+                
             },
-            {
-                'title': 'AC11.3 Configure the basic functions of the local network',
-                'analyse_link': 'https://docs.google.com/document/d/1QaiqFDhXk3j-9GImzEWd1b5MHt2ARu4bsttcaV6XmVw/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/1fF-75sIcDA1ldVesVRpGs1VwbphooMN4HEPkXJbey-M/edit?usp=sharing',
-                'description': 'In this learning activity, the goal is to know how to configure the basics of a network.',
-                'ressenti': 'During practical exercises and SAE, I progressively felt more comfortable with network configuration.'
-            },
-            {
-                'title': 'AC11.6 Install a client workstation, explain the procedure implemented',
-                'analyse_link': 'https://docs.google.com/document/d/16v024vTwf2lsZf-kIKE1lMP_0EZ1gfHuZGjpVmgCs6w/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/19eC-XTAuixHNhTKqV-vG8bWFuY_JBp9uwrMnnH3wBfU/edit?usp=sharing',
-                'description': 'Understand the process for installing a client workstation.',
-                'ressenti': 'During the manipulations, I felt comfortable, especially when creating and installing virtual machines.'
-            }
+            
         ] %}
 
         {% for comp in administrer_competences %}
             <div class="card mb-3">
                 <div class="card-body">
                     <h3 class="card-title">{{ comp.title }}</h3>
-                    <p class="card-text">{{ comp.description }}</p>
-                    <div class="mt-3 mb-3">
-                        <h5>My feelings and positioning</h5>
-                        <p>{{ comp.ressenti }}</p>
-                    </div>
+
+                    {% block description %}
+                        <p class="card-text">{{ comp.description }}</p>
+                    {% endblock %}
+
+                    {% block ressenti %}
+                        <div class="mt-3 mb-3">
+                            <h5>My Feedback and Self-Assessment</h5>
+                            <p>{{ comp.ressenti }}</p>
+                        </div>
+                    {% endblock %}
+
                     <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Reflective Analysis</a>
-                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Proof Document</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Supporting Document</a>
                 </div>
             </div>
         {% endfor %}
@@ -58,32 +53,33 @@
 
         {% set connecter_competences = [
             {
-                'title': 'AC12.01 Measure and analyze signals',
-                'analyse_link': 'https://docs.google.com/document/d/19oNufky1zcEQXh6POO8xODQrJcPLpvSOyDk1189HYkw/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/16m_FGLVSZw8uufoLleq-JjsXhXAXtGit6XFlgoLdAjg/edit?usp=sharing',
-                'description': 'Our goal is to measure and analyze signals.',
-                'ressenti': 'I really enjoyed using the reflectometer because it is a very concrete tool that allows us to quickly visualize the state of a network installation.'
+                'title': 'Critical Skill: Connecting Businesses and Users',
+                'analyse_link': 'https://docs.google.com/document/d/1EQMSRwTWrJSPr3_KrxUVS1aD7ICOAqb1/edit?usp=sharing&ouid=112405732234709398963&rtpof=true&sd=true',
+                'preuve_link': 'https://docs.google.com/document/d/1QmMITwrIReT0juCFJhAfOPg_oM_cuFLW/edit?usp=sharing&ouid=112405732234709398963&rtpof=true&sd=true',
+                'description': 'In this skill, we connected both businesses and users.',
+                'ressenti': 'I really enjoyed carrying out the WiFi audit and copper cabling testing. I was able to use professional equipment, and it was fascinating. I would give myself a 4/5 for this skill.'
             },
-            {
-                'title': 'AC12.03 Deploy transmission supports',
-                'analyse_link': 'https://docs.google.com/document/d/1DRV1I6NoUCaNBJgtJAE0hggSyMnzKun2OuGZ6y1ixgI/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/1a7Tz44ZtbI4HYMlOhR55KQCvDal20uHBFHlblWQKAy4/edit?usp=sharing',
-                'description': 'Our goal is to deploy transmission supports.',
-                'ressenti': 'During the activities, I felt very comfortable, especially during practical exercises on fiber optics.'
-            }
+            
         ] %}
 
         {% for comp in connecter_competences %}
             <div class="card mb-3">
                 <div class="card-body">
                     <h3 class="card-title">{{ comp.title }}</h3>
-                    <p class="card-text">{{ comp.description }}</p>
-                    <div class="mt-3 mb-3">
-                        <h5>My feelings and positioning</h5>
-                        <p>{{ comp.ressenti }}</p>
-                    </div>
+
+                    {% block description2 %}
+                        <p class="card-text">{{ comp.description }}</p>
+                    {% endblock %}
+
+                    {% block ressenti2 %}
+                        <div class="mt-3 mb-3">
+                            <h5>My Feedback and Self-Assessment</h5>
+                            <p>{{ comp.ressenti }}</p>
+                        </div>
+                    {% endblock %}
+
                     <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Reflective Analysis</a>
-                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Proof Document</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Supporting Document</a>
                 </div>
             </div>
         {% endfor %}
@@ -95,39 +91,33 @@
 
         {% set creation_outil_competences = [
             {
-                'title': 'AC13.01 Use a computer system and its tools',
-                'analyse_link': 'https://docs.google.com/document/d/1VWWm2eP9TH2U7koHK-v8Nu6MHGejdNvsPLjl1d7cJGQ/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/1XUvvfHCwn8_q5gxmTdTXjlq9Xtbs_PLQMpln23EtZ_4/edit?usp=sharing',
-                'description': 'Know how to turn an algorithm into functional code in a programming language.',
-                'ressenti': 'While translating a sorting algorithm from pseudocode to C, I enjoyed understanding exactly how control structures transform.'
+                'title': 'Critical Skill: Creating Tools and Software Applications for Networks & Telecommunications',
+                'analyse_link': 'https://docs.google.com/document/d/1vzX3MeXSibVQlBx6v1m1h0rZFBnchQMD/edit?usp=sharing&ouid=112405732234709398963&rtpof=true&sd=true',
+                'preuve_link': 'https://docs.google.com/document/d/1ZevX7Iw48RRBIE-QW21gCMWEuEchqwoy/edit?usp=sharing&ouid=112405732234709398963&rtpof=true&sd=true',
+                'description': 'In this skill, we explore tool creation. To illustrate this, I will present one of my projects.',
+                'ressenti': 'While creating my program, I struggled with some concepts, but thanks to documentation, I managed to achieve what I wanted. I would give myself a 3/5 for this skill.'
             },
-            {
-                'title': 'AC13.02 Read, execute, correct and modify a program',
-                'analyse_link': 'https://docs.google.com/document/d/1A3CRBqwnTIzDZ77ypHNO1g8rkrfZBvpoOtd-OQjlRYk/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/1HIUKTaC_yIaivUA7faiXpfCxz1CGdwo7VGjhjxtvHFw/edit?usp=sharing',
-                'description': 'Our goal is to understand a program and fix any errors if needed.',
-                'ressenti': 'During the activities, I found programming in Python quite satisfying because the syntax is more readable and the logic easier to follow.'
-            },
-            {
-                'title': 'AC13.03 Translate an algorithm into a programming language and for a given environment',
-                'analyse_link': 'https://docs.google.com/document/d/1QE5m4HLDkI8jPGJ_9j7hFRD3JI1-YGWHbWaAwveLQCY/edit?usp=sharing',
-                'preuve_link': 'https://docs.google.com/document/d/1u-89aaw8u5f-uzVZOxeZgFKCX_QDEsXAaSS-by2dP0M/edit?usp=sharing',
-                'description': 'We will see how to implement a program using an algorithm.',
-                'ressenti': 'During the activities, I found it satisfying to work from algorithms because it helps to better organize ideas before coding.'
-            }
+            
         ] %}
 
         {% for comp in creation_outil_competences %}
             <div class="card mb-3">
                 <div class="card-body">
                     <h3 class="card-title">{{ comp.title }}</h3>
-                    <p class="card-text">{{ comp.description }}</p>
-                    <div class="mt-3 mb-3">
-                        <h5>My feelings and positioning</h5>
-                        <p>{{ comp.ressenti }}</p>
-                    </div>
+
+                    {% block description3 %}
+                        <p class="card-text">{{ comp.description }}</p>
+                    {% endblock %}
+
+                    {% block ressenti3 %}
+                        <div class="mt-3 mb-3">
+                            <h5>My Feedback and Self-Assessment</h5>
+                            <p>{{ comp.ressenti }}</p>
+                        </div>
+                    {% endblock %}
+
                     <a href="{{ comp.analyse_link }}" class="btn btn-primary me-2" target="_blank">Reflective Analysis</a>
-                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Proof Document</a>
+                    <a href="{{ comp.preuve_link }}" class="btn btn-secondary" target="_blank">Supporting Document</a>
                 </div>
             </div>
         {% endfor %}

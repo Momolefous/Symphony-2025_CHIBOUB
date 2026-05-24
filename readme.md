@@ -6,5 +6,7 @@ Ce site présente un E-Portfolio, un CV et plusieurs pages (Accueil, Loisirs, Co
 ## Installation et lancement
 
 1. Installer les dépendances :
-```bash
 composer install
+ 
+2. Démarrer le serveur
+symfony server:start
